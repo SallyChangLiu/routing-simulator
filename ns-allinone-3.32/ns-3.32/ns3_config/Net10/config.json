@@ -1,0 +1,10 @@
+{
+    "NetName": "Net10",
+    "Number": 10,
+    "AppSendInterval": "1ms",
+    "QueueCapacity": 100,
+    "DataRate": "100Mbps",
+    "LinkDelay":"1us",
+    "PacketSize": 1500,
+    "LinkConfigFile": "ns3_config/Net10/link.csv"
+}

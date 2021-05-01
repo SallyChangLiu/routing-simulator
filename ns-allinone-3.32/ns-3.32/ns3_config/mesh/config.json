@@ -1,0 +1,18 @@
+{
+    "NetName": "mesh",
+    "Hight": 6,
+    "Width": 5,
+    "SimulatorEndTime": "1s",
+    "AppSendInterval": "10ms",
+    "QueueCapacity": 100,
+    "DataRate": "1Gbps",
+    "seed": 666,
+    "LinkDelay": 100000,
+    "DestinationNode": [
+        "host0",
+        "host18"
+    ],
+    "OutputFolder": "ns3_log/mesh",
+    "TraceInterval": "1ms",
+    "TraceEndTime": "1s"
+}

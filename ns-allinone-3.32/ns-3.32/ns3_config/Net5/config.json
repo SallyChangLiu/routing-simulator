@@ -1,0 +1,19 @@
+{
+    "NetName": "Net5",
+    "Number": 5,
+    "SimulatorEndTime": "1s",
+    "AppSendInterval": "10ms",
+    "QueueCapacity": 100,
+    "DataRate": "1Mbps",
+    "seed": 666,
+    "LinkDelayLow": 100000,
+    "LinkDelayHigh": 1000000,
+    "DestinationNode": [
+        "host1",
+        "host2"
+    ],
+    "OutputFolder": "ns3_log/Net5",
+    "TraceInterval": "1ms",
+    "TraceEndTime": "1s",
+    "LinkConfigFile": "ns3_config/Net5/link.csv"
+}
