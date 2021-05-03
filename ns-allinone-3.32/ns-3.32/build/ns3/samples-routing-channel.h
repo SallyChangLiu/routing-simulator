@@ -33,13 +33,12 @@ namespace ns3
     class SamplesRoutingChannel : public Channel
     {
     public:
-
         /**
          * \brief Get the TypeId
          *
          * \return The TypeId for this class
          */
-        static TypeId GetTypeId (void);
+        static TypeId GetTypeId(void);
 
         /**
          * \brief Create a DpskChannel
@@ -47,12 +46,12 @@ namespace ns3
          * By default, you get a channel that has an "infinitely" fast
          * transmission speed and zero delay.
          */
-        SamplesRoutingChannel ();
+        SamplesRoutingChannel();
 
         /**
          * \brief Dispose of the object
          */
-        virtual void DoDispose (void);
+        virtual void DoDispose(void);
 
         /**
          * \brief Attach a given queue to this channel
@@ -73,21 +72,21 @@ namespace ns3
          * \brief Get number of devices on this channel
          * \returns number of devices on this channel
          */
-        virtual std::size_t GetNDevices (void) const;
+        virtual std::size_t GetNDevices(void) const;
 
         /**
          * \brief Get DpskNetDevice corresponding to index i on this channel
          * \param i Index number of the device requested
          * \returns Ptr to DpskNetDevice requested
          */
-        Ptr<SamplesRoutingNetDevice> GetSamplesRoutingNetDevice (std::size_t i) const;
+        Ptr<SamplesRoutingNetDevice> GetSamplesRoutingNetDevice(std::size_t i) const;
 
         /**
          * \brief Get NetDevice corresponding to index i on this channel
          * \param i Index number of the device requested
          * \returns Ptr to NetDevice requested
          */
-        virtual Ptr<NetDevice> GetDevice (std::size_t i) const;
+        virtual Ptr<NetDevice> GetDevice(std::size_t i) const;
 
         void SetDelay(Time dly);
 
@@ -98,13 +97,11 @@ namespace ns3
          */
         Time GetDelay(void) const;
 
-        
-
         /**
          * \brief Check to make sure the link is initialized
          * \returns true if initialized, asserts otherwise
          */
-        bool IsInitialized (void) const;
+        bool IsInitialized(void) const;
 
         /**
          * \brief Get the net-device source
@@ -112,7 +109,7 @@ namespace ns3
          * \returns Ptr to DpskNetDevice source for the
          * specified link
          */
-        Ptr<SamplesRoutingNetDevice> GetSource (uint32_t i) const;
+        Ptr<SamplesRoutingNetDevice> GetSource(uint32_t i) const;
 
         /**
          * \brief Get the net-device destination
@@ -120,11 +117,11 @@ namespace ns3
          * \returns Ptr to DpskNetDevice destination for
          * the specified link
          */
-        Ptr<SamplesRoutingNetDevice> GetDestination (uint32_t i) const;
+        Ptr<SamplesRoutingNetDevice> GetDestination(uint32_t i) const;
 
     private:
         static const std::size_t N_DEVICES = 2;
-        Time m_delay;          //!< Propagation delay
+        Time m_delay;           //!< Propagation delay
         std::size_t m_nDevices; //!< devices of this channel
 
         /** \brief Wire states
@@ -155,7 +152,7 @@ namespace ns3
             {
             }
 
-            WireState m_state;              //!< State of the link
+            WireState m_state;                  //!< State of the link
             Ptr<SamplesRoutingNetDevice> m_src; //!< First NetDevice
             Ptr<SamplesRoutingNetDevice> m_dst; //!< Second NetDevice
         };

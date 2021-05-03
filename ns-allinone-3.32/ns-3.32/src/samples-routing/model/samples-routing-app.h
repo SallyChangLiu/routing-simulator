@@ -79,13 +79,6 @@ namespace ns3
          */
         void StartApplication();
 
-        void SetPkgRxCompleteTraceCallback(TracedCallback<Ptr<SamplesRoutingPacket>> cb);
-
-    protected:
-        virtual void DoDispose(void);
-        virtual void DoInitialize(void);
-
-    private:
         /**
          * \brief Application specific shutdown code
          *
@@ -95,6 +88,11 @@ namespace ns3
          */
         void StopApplication(void);
 
+    protected:
+        virtual void DoDispose(void);
+        virtual void DoInitialize(void);
+
+    private:
         /**
          * The trace source fired for Receiving a packet.
          *

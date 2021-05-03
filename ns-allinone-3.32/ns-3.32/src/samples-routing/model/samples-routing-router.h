@@ -103,7 +103,7 @@ namespace ns3
         Ptr<SamplesRoutingNode> m_node;
 
         RxCallBack m_rxCallBack; //call app receiver
-        TracedCallback<Ptr<SamplesRoutingRouter>,Ptr<SamplesRoutingPacket>,int> m_RouterOutputGateTrace;
+        TracedCallback<Ptr<SamplesRoutingRouter>, Ptr<SamplesRoutingPacket>, int> m_RouterOutputGateTrace;
     };
 } // namespace ns3
 

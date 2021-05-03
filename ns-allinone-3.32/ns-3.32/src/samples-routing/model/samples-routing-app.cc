@@ -131,10 +131,4 @@ namespace ns3
         NS_LOG_UNCOND("\nReceive packet: " + p->GetName());
         m_packetRxCompleteTrace(p);
     }
-
-    void SamplesRoutingApp::SetPkgRxCompleteTraceCallback(TracedCallback<Ptr<SamplesRoutingPacket>> cb)
-    {
-        m_packetRxCompleteTrace = cb;
-    }
-
 } // namespace ns3

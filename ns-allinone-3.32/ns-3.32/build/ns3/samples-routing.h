@@ -14,12 +14,12 @@ namespace ns3
     class SamplesRoutingNode;
     class SamplesRoutingNetDevice;
 
-    extern boost::bimap<Ipv4Address, std::string> addr2Name;
-    extern boost::bimap<std::string, Ptr<SamplesRoutingNode>> name2node;
-    extern std::map<Ptr<SamplesRoutingNode>, std::vector<Ptr<SamplesRoutingNetDevice>>> node2port;
-    extern uint32_t pkgseq;
-    extern uint32_t MTU;
-    extern Time simulatorEndTime;
+    extern boost::bimap<Ipv4Address, std::string> addr2Name;                                       //node address <---->node name
+    extern boost::bimap<std::string, Ptr<SamplesRoutingNode>> name2node;                           //node name <--->node ptr
+    extern std::map<Ptr<SamplesRoutingNode>, std::vector<Ptr<SamplesRoutingNetDevice>>> node2port; //node --->the vector for its netdevices
+    extern uint32_t pkgseq;                                                                        //the next seq of packet
+    extern uint32_t MTU;                                                                           //the packet size in bytes
+    extern Time simulatorEndTime;                                                                  //the simulator end time
 }
 
 #endif /* SAMPLES_ROUTING_H */

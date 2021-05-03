@@ -80,7 +80,7 @@ namespace ns3
         /**
          * \brief Dispose of the object
          */
-        virtual void DoDispose (void);
+        virtual void DoDispose(void);
 
         /**
          * Attach the device to a channel.
@@ -90,7 +90,7 @@ namespace ns3
          */
         bool Attach(Ptr<SamplesRoutingChannel> ch);
 
-        typedef Callback<void,Ptr<SamplesRoutingPacket>> ReceiveCallback;
+        typedef Callback<void, Ptr<SamplesRoutingPacket>> ReceiveCallback;
         void SetRxCallBack(ReceiveCallback cb);
 
         /**
@@ -110,12 +110,14 @@ namespace ns3
          */
         Ptr<SamplesRoutingQueue> GetQueue(void) const;
 
-
         /**
          * Start transmit process.
          */
         void TransmitStart(Ptr<SamplesRoutingPacket> p);
 
+        /**
+         * complete transmitting a packet
+         */
         void CompleteTransimit();
 
         /**
@@ -183,29 +185,28 @@ namespace ns3
          * \returns the address of the remote device connected to this device
          * through the Dpsk channel.
          */
-        Address GetRemote (void) const;
+        Address GetRemote(void) const;
 
         uint32_t GetRxBytes() const;
         uint32_t GetTxBytes() const;
-
 
     private:
         Ptr<SamplesRoutingQueue> m_queue;
         Ptr<SamplesRoutingChannel> m_channel;
         Ptr<SamplesRoutingNode> m_node;
-        DataRate m_rate;
+        DataRate m_rate;        //the data rate of this device
         Mac48Address m_address; //!< Mac48Address of this NetDevice
-        bool m_isBusy;
-        bool m_isLinkUp;
+        bool m_isBusy;          // if this device is avaliable now
+        bool m_isLinkUp;        //if this device is linked to a channel
         ReceiveCallback m_receiveCallback;
         uint32_t m_txBytes;
         uint32_t m_rxBytes;
 
         NetDevice::ReceiveCallback m_rxCallback; //!< Receive callback
         //some values
-        uint32_t m_ifIndex; //!< Index of the interface
+        uint32_t m_ifIndex;                                  //!< Index of the interface
         NetDevice::PromiscReceiveCallback m_promiscCallback; //!< Receive callback (promisc data)
-        TracedCallback<> m_linkChangeCallbacks; //!< Callback for the link change event
+        TracedCallback<> m_linkChangeCallbacks;              //!< Callback for the link change event
     };
 
 } // namespace ns3

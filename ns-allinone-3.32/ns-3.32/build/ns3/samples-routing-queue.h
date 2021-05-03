@@ -46,11 +46,25 @@ namespace ns3
          */
         virtual void DoDispose(void);
 
+        /**
+         * pop a packet from queue
+         * \return the packet
+         */
         Ptr<SamplesRoutingPacket> DequeuePkg();
+
+        /**
+         * push a packet into queue
+         */
         void InqueuPkg(Ptr<SamplesRoutingPacket> p);
 
+        /**
+         * get the queue length
+         */
         uint32_t GetQueueLength();
 
+        /**
+         * set the max number of the packet in queue
+         */
         void SetCapacity(uint32_t capacity);
 
         void SetDev(Ptr<SamplesRoutingNetDevice> dev);
